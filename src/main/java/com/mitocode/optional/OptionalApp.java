@@ -5,7 +5,7 @@ import java.util.Optional;
 public class OptionalApp {
 
 	public void probar(String valor){
-		//System.out.println(valor.contains("mito"));			
+//		System.out.println(valor.contains("mito"));			
 		
 		try{
 			Optional op = Optional.empty();
@@ -16,6 +16,8 @@ public class OptionalApp {
 	}
 	
 	public void orElse(String valor){
+		
+		
 		Optional<String> op = Optional.ofNullable(valor);
 		String x = op.orElse("predeterminado");
 		System.out.println(x);
@@ -33,9 +35,9 @@ public class OptionalApp {
 	
 	public static void main(String[] args) {
 		OptionalApp app = new OptionalApp();
-		//app.probar("Mito");
-		//app.orElse("Mito");
-		//app.orElseThrow("Mito");
+//		app.probar("Mito");
+//		app.orElse("Mito");
+//		app.orElseThrow(null);
 		app.isPresent("Mito");
 	}
 }

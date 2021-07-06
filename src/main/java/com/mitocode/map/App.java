@@ -3,6 +3,7 @@ package com.mitocode.map;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
 public class App {
@@ -20,10 +21,24 @@ public class App {
 		for (Entry<Integer, String> e : map.entrySet()) {
 			System.out.println("Llave: " + e.getKey() + " Valor: " + e.getValue());
 		}
+		
+//		Set<Integer> keyMap= map.keySet();
+//		for (Integer key :keyMap) {
+//			System.out.println("Llave: " + key + " Valor: " + map.get(key));
+//		}
 	}
 
 	public void imprimir_v8() {
-		//map.forEach((k,v) -> System.out.println("Llave: " + k + " Valor: " + v));
+		map.forEach(new BiConsumer<Integer, String>(){
+
+			@Override
+			public void accept(Integer k, String v) {
+				System.out.println("Llave: " + k + " Valor: " + v);
+				
+			}
+			
+		});
+//		map.forEach((k,v) -> System.out.println("Llave: " + k + " Valor: " + v));
 		map.entrySet().stream().forEach(System.out::println);
 	}
 
@@ -52,12 +67,12 @@ public class App {
 	public static void main(String[] args) {
 		App app = new App();
 		app.poblar();
-		//app.imprimir_v7();
+		app.imprimir_v7();
 		//app.insertarSiAusente();
 		//app.imprimir_v8();
 		//app.operarSiPresente();
 		//app.obtenerOrPredeterminado();
-		app.recolectar();
+//		app.recolectar();
 	}
 
 }

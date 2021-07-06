@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ColeccionApp {
 
@@ -23,8 +24,18 @@ public class ColeccionApp {
 			System.out.println(elemento);
 		}*/
 		
-		//lista.forEach(x -> System.out.println(x));		
-		lista.forEach(System.out::println);
+		lista.forEach(new Consumer<String>() {
+
+			@Override
+			public void accept(String x) {
+				System.out.println(x);
+				
+			}
+			
+		});	
+		
+//		lista.forEach(x -> System.out.println(x));		
+//		lista.forEach(System.out::println);
 		
 	}
 
